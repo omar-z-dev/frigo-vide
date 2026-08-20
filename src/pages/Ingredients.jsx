@@ -31,6 +31,11 @@ export default function Ingredients() {
   }
 
   function voirRecettes() {
+    if (ingredients.length === 0) {
+      alert("Ajoute au moins un ingrédient");
+      return;
+    }
+
     navigate("/recettes");
   }
 
