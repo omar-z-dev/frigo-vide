@@ -9,20 +9,24 @@ import Recettes from "./pages/Recettes";
 import DetailRecette from "./pages/DetailRecette";
 import Favoris from "./pages/Favoris";
 import { Routes, Route } from "react-router";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Accueil />} />
+    <>
+      <Routes>
+        <Route path="/" element={<Accueil />} />
 
-      <Route path="/ingredients" element={<Ingredients />} />
+        <Route path="/ingredients" element={<Ingredients />} />
 
-      <Route path="/recettes" element={<Recettes />} />
+        <Route path="/recettes" element={<Recettes />} />
 
-      <Route path="/recette/:id" element={<DetailRecette />} />
+        <Route path="/recette/:id" element={<DetailRecette />} />
 
-      <Route path="/favoris" element={<Favoris />} />
-    </Routes>
+        <Route path="/favoris" element={<Favoris />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
