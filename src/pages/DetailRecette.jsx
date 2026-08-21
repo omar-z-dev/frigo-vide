@@ -36,23 +36,31 @@ export default function DetailRecette() {
 
           {/* CUISSON PERSONNES TEMPS */}
           <div className="tags-detail-recette">
-            <p>
-              <img src={clock} alt="Horloge" />
-              {recette.temps_preparation}
-            </p>
-            <p>
-              <img src={loader} alt="Horloge" />
-              {recette.temps_cuisson}
-            </p>
-            <p>
-              <img src={user} alt="Horloge" />
-              {recette.nombre_personnes} personnes
-            </p>
+            <div className="t">
+              <div>
+                <img src={clock} alt="Horloge" />
+              </div>
+              <div>{recette.temps_preparation}</div>
+            </div>
+
+            <div className="t">
+              <div>
+                <img src={loader} alt="Horloge" />
+              </div>
+              <div>{recette.temps_cuisson}</div>
+            </div>
+
+            <div className="t">
+              <div>
+                <img src={user} alt="Horloge" />
+              </div>
+              <div>{recette.nombre_personnes} personnes</div>
+            </div>
           </div>
         </div>
       </div>
       {/* INGREDIENTS */}
-      <div className="recipes-card ingredients-detail-recette">
+      <div className=" ingredients-detail-recette">
         <h2>Ingredients</h2>
         {recette.ingredients.map((ingredient, index) => (
           <p key={index}>
@@ -61,7 +69,7 @@ export default function DetailRecette() {
         ))}
       </div>
       {/* STEPS  */}
-      <div className="recipes-card steps-detail-recette">
+      <div className="steps-detail-recette">
         <h2>Steps</h2>
         {recette.etapes.map((step, index) => (
           <p key={index}>{step}</p>
