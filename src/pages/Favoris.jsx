@@ -8,16 +8,19 @@ export default function Favoris() {
   return (
     <div className="favoris-page">
       <h1>My recipies</h1>
+      {favoris.length === 0 ? (
+        <p className="aucun-favori">Vous n'avez aucun favori.</p>
+      ) : (
+        <div className="recipes-list">
+          {favoris.map((recette) => (
+            <div className="recipes-card-favoris" key={recette.id}>
+              <img src={recette.image} alt={recette.nom} width="250" />
 
-      <div className="recipes-list">
-        {favoris.map((recette) => (
-          <div className="recipes-card" key={recette.id}>
-            <img src={recette.image} alt={recette.nom} width="250" />
-
-            <h3>{recette.nom}</h3>
-          </div>
-        ))}
-      </div>
+              <h3>{recette.nom}</h3>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
