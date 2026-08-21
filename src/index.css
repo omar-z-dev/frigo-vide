@@ -23,6 +23,20 @@ li {
 .btn-primary:hover {
   background: #b5704b;
 }
+.btn-primary:focus {
+  outline: none;
+}
+
+/*************************** ACCUEIL *********************************/
+.accueil-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem;
+}
+/************************* INGREDIENTS ******************************/
 .ingredients {
   display: flex;
   flex-direction: column;
@@ -44,6 +58,16 @@ li {
 }
 .btn-supprimer {
   margin-left: 30px;
+  background-color: #ff5900;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+.btn-supprimer:focus {
+  outline: none;
+}
+.btn-supprimer:hover {
+  background-color: #b5704b;
 }
 .ingredients-list-detail {
   display: flex;
@@ -56,6 +80,7 @@ li {
 .secondary-title {
   color: #2b2a29;
 }
+/************************ RECIPIES *****************************/
 .suggested-recipes-title {
   display: flex;
   align-items: center;
@@ -72,9 +97,26 @@ li {
   padding: 1rem;
   margin: 1rem;
   background-color: #ffffff;
+  box-shadow: 2px 6px 0 black;
+}
+.recipes-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.1rem;
+  margin-bottom: 4rem;
+}
+.recipes-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .link-back {
   display: inline-flex;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 .ingredients input {
   width: 300px;
@@ -82,38 +124,86 @@ li {
   padding: 0.5rem;
   border: solid 1px #10100f;
 }
-.accueil-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
+
+/************************** FOOTER ***************************/
 .footer {
   background-color: #1b0d07;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   height: 65px;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
-
 .footer img {
   width: 25px;
   height: 25px;
   object-fit: contain;
 }
-.recipes-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.1rem;
+/****************** FAVORIS **********************/
+.favoris-page {
+  padding: 2rem;
 }
-.recipes-card img {
-  width: 100%;
-  height: 300px;
+
+.ajouter-favoris-btn {
+  background-color: #ff5100;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+.favoris-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.favoris-icon img {
+  width: 30px;
+}
+.favoris-count {
+  position: absolute;
+  right: -10px;
+  bottom: -5px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff5100;
+  color: white;
+  border: 3px solid black;
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 0.6rem;
+}
+/************************ DETAIL RECETTES ***************************/
+.detail-recette-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 4rem;
+}
+.image-detail-recette {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+.hero-pic {
+  width: 400px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
+}
+.tags-detail-recette {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.hero-detail-recette h1 {
+  margin-bottom: 3rem;
+}
+.detail-recipes-title {
+  display: flex;
+  align-items: center;
 }

@@ -3,22 +3,31 @@ import FrigoContext from "../contexts/FrigoContext";
 import recettes from "../data/recettes_cuisine.json";
 import arrowHead from "../assets/images/Frame3.png";
 import { Link } from "react-router";
+import FavorisContext from "../contexts/FavorisContext";
+import { useNavigate } from "react-router";
 
 export default function Recettes() {
   const { ingredients } = useContext(FrigoContext);
-
+  const { favoris, ajouterFavoris } = useContext(FavorisContext);
+  const navigate = useNavigate();
   /* recettes et ingredients sont des tableaux */
   console.log(recettes);
   console.log(ingredients);
+  /*fonction pour echaper les accent et majuscules*/
+  function sansAccent(texte) {
+    return texte
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  }
 
   /*Filter cré un nouveau tableau  et somme renvoie true si au moins un des elements du tableau satisfait la condition */
 
   const recettesFiltrees = recettes.filter((recette) => {
-    return ingredients.some((ingredientSaisi) =>
-      recette.ingredients.some((ingredientRecette) =>
-        ingredientRecette.nom
-          .toLowerCase()
-          .includes(ingredientSaisi.toLowerCase()),
+    return ingredients.every((ingredientSaisi) =>
+      recette.ingredients.some(
+        (ingredientRecette) =>
+          sansAccent(ingredientRecette.nom) === sansAccent(ingredientSaisi),
       ),
     );
   });
@@ -35,13 +44,34 @@ export default function Recettes() {
       </div>
 
       <div className="recipes-list">
-        {recettesFiltrees.map((recette) => (
-          <div className="recipes-card" key={recette.id}>
-            <img src={recette.image} alt={recette.nom} width="250" />
+        {recettesFiltrees.map((recette) => {
+          /*dejaFavori est égal à true si le favoris est le meme que recette false sinon */
+          const dejaFavori = favoris.some((favori) => favori.id === recette.id);
 
-            <h3>{recette.nom}</h3>
-          </div>
-        ))}
+          return (
+            <div
+              className="recipes-card"
+              key={recette.id}
+              onClick={() => navigate(`/recette/${recette.id}`)}
+            >
+              <img src={recette.image} alt={recette.nom} />
+
+              <h3>{recette.nom}</h3>
+
+              <button
+                className="ajouter-favoris-btn"
+                onClick={(event) => {
+                  /*stop la propagation de l'evenement du  clic*/
+                  event.stopPropagation();
+                  ajouterFavoris(recette);
+                }}
+                disabled={dejaFavori}
+              >
+                {dejaFavori ? "Déjà dans les favoris" : "Ajouter aux favoris"}
+              </button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
