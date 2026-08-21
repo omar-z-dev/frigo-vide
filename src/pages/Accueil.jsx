@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function Accueil() {
   return (
     <div className="accueil-page">
-      <h1>Empty Fridge</h1>
+      <h1 className="primary-title">Empty Fridge</h1>
       <img src={imageFrigo} alt="Frigo" />
       <p>
         The app that helps you eat better by using your leftovers and saving as

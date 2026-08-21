@@ -1,4 +1,5 @@
 /***********************************/
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +36,10 @@ li {
   justify-content: center;
   gap: 2rem;
   margin: 2rem;
+}
+.primary-title {
+  font-family: jua, sans-serif;
+  font-weight: 400;
 }
 /************************* INGREDIENTS ******************************/
 .ing-list {

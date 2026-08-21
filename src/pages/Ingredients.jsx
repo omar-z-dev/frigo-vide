@@ -41,7 +41,7 @@ export default function Ingredients() {
 
   return (
     <div className="ingredients">
-      <h1>Add ingredients</h1>
+      <h1 className="primary-title">Add ingredients</h1>
       <input
         type="text"
         value={ingredient}
@@ -49,13 +49,15 @@ export default function Ingredients() {
         placeholder="Ex : tomate"
       />
       {/* bouton pour ajouter l'ingrédient */}
-      <button className="btn-primary" onClick={ajouterIngredient}>
+      <button className="btn-primary " onClick={ajouterIngredient}>
         Add ingredients
       </button>
 
       {/* afficher la liste des ingrédients */}
       <div className="ingredients-list">
-        <h2 className="secondary-title">In my fridge there a some :</h2>
+        <h2 className="secondary-title primary-title">
+          In my fridge there a some :
+        </h2>
         <ul className="ingredients-list-detail">
           {ingredients.map((item, index) => (
             <li className="ing-list" key={index}>

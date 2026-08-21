@@ -7,7 +7,7 @@ export default function Favoris() {
 
   return (
     <div className="favoris-page">
-      <h1>My recipies</h1>
+      <h1 className="primary-title">My recipies</h1>
       {favoris.length === 0 ? (
         <p className="aucun-favori">Vous n'avez aucun favori.</p>
       ) : (
@@ -16,7 +16,7 @@ export default function Favoris() {
             <div className="recipes-card-favoris" key={recette.id}>
               <img src={recette.image} alt={recette.nom} width="250" />
 
-              <h3>{recette.nom}</h3>
+              <h3 className="primary-title">{recette.nom}</h3>
             </div>
           ))}
         </div>

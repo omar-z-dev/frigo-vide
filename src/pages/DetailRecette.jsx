@@ -61,7 +61,7 @@ export default function DetailRecette() {
       </div>
       {/* INGREDIENTS */}
       <div className=" ingredients-detail-recette">
-        <h2>Ingredients</h2>
+        <h2 className="primary-title">Ingredients</h2>
         {recette.ingredients.map((ingredient, index) => (
           <p key={index}>
             {ingredient.illustration} {ingredient.nom}

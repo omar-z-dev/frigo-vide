@@ -35,7 +35,7 @@ export default function Recettes() {
   return (
     <div className="recipies-page">
       <div>
-        <h1 className="suggested-recipes-title">
+        <h1 className="suggested-recipes-title primary-title">
           <Link className="link-back" to="/ingredients">
             <img src={arrowHead} alt="Retour" />
           </Link>
@@ -56,7 +56,7 @@ export default function Recettes() {
             >
               <img src={recette.image} alt={recette.nom} />
 
-              <h3>{recette.nom}</h3>
+              <h3 className="primary-title">{recette.nom}</h3>
 
               <button
                 className="ajouter-favoris-btn"
