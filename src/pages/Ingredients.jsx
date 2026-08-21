@@ -58,7 +58,7 @@ export default function Ingredients() {
         <h2 className="secondary-title">In my fridge there a some :</h2>
         <ul className="ingredients-list-detail">
           {ingredients.map((item, index) => (
-            <li key={index}>
+            <li className="ing-list" key={index}>
               {item}
 
               {/* bouton pour supprimer l'ingrédient */}

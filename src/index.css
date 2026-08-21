@@ -37,6 +37,13 @@ li {
   margin: 2rem;
 }
 /************************* INGREDIENTS ******************************/
+.ing-list {
+  display: flex;
+  flex-direction: rox;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 .ingredients {
   display: flex;
   flex-direction: column;
@@ -58,16 +65,16 @@ li {
 }
 .btn-supprimer {
   margin-left: 30px;
-  background-color: #ff5900;
-  border-radius: 50%;
+  background-color: #ead4c8;
+  border-radius: 6px;
   width: 25px;
   height: 25px;
-}
-.btn-supprimer:focus {
-  outline: none;
+  border: none;
+  cursor: pointer;
 }
 .btn-supprimer:hover {
   background-color: #b5704b;
+  color: white;
 }
 .ingredients-list-detail {
   display: flex;
@@ -76,6 +83,7 @@ li {
   justify-content: center;
   gap: 1rem;
   padding: 0.2rem;
+  width: 100%;
 }
 .secondary-title {
   color: #2b2a29;
