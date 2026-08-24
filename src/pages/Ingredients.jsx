@@ -68,7 +68,7 @@ export default function Ingredients() {
                 className="btn-supprimer"
                 onClick={() => supprimerIngredient(index)}
               >
-                X
+                ✕
               </button>
             </li>
           ))}

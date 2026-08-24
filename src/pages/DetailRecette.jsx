@@ -18,7 +18,7 @@ export default function DetailRecette() {
       {/* HERO DETAIL RECETTE*/}
       <div className="hero-detail-recette">
         {/* RETOUR A RECETTES */}
-        <h1 className="detail-recipes-title">
+        <h1 className="primary-title detail-recipes-title">
           <button className="link-back" onClick={() => navigate(-1)}>
             <img src={arrowHead} alt="Retour" />
           </button>
@@ -69,8 +69,8 @@ export default function DetailRecette() {
         ))}
       </div>
       {/* STEPS  */}
-      <div className="steps-detail-recette">
-        <h2>Steps</h2>
+      <div className=" steps-detail-recette">
+        <h2 className="primary-title">Steps</h2>
         {recette.etapes.map((step, index) => (
           <p key={index}>{step}</p>
         ))}

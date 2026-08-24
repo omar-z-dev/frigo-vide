@@ -2,7 +2,7 @@ import { useContext } from "react";
 import FavorisContext from "../contexts/FavorisContext";
 
 export default function Favoris() {
-  const { favoris } = useContext(FavorisContext);
+  const { favoris, supprimerFavoris } = useContext(FavorisContext);
   console.log("FAVORIS DANS LA PAGE :", favoris);
 
   return (
@@ -17,6 +17,13 @@ export default function Favoris() {
               <img src={recette.image} alt={recette.nom} width="250" />
 
               <h3 className="primary-title">{recette.nom}</h3>
+              <button
+                type="button"
+                className="ajouter-favoris-btn"
+                onClick={() => supprimerFavoris(recette.id)}
+              >
+                Enlever des favoris
+              </button>
             </div>
           ))}
         </div>
