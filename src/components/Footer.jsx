@@ -1,9 +1,5 @@
 import { useContext } from "react";
 import FavorisContext from "../contexts/FavorisContext";
-import homeIcon from "../assets/images/home.png";
-import listIcon from "../assets/images/list.png";
-import fridgeIcon from "../assets/images/book.png";
-import { Link } from "react-router";
 import { NavLink } from "react-router";
 
 export default function Footer() {

@@ -5,14 +5,18 @@ import user from "../assets/images/user.png";
 import loader from "../assets/images/loader.png";
 import { Link } from "react-router";
 import arrowHead from "../assets/images/Frame3.png";
+import { useContext } from "react";
+import FavorisContext from "../contexts/FavorisContext";
 
 export default function DetailRecette() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { favoris, ajouterFavoris } = useContext(FavorisContext);
 
   console.log("id de la rectte : ", id);
 
   const recette = recettes.find((recette) => recette.id === Number(id));
+  const dejaFavori = favoris.some((favori) => favori.id === recette.id);
   return (
     <div className="detail-recette-page">
       {/* HERO DETAIL RECETTE*/}
@@ -59,6 +63,14 @@ export default function DetailRecette() {
           </div>
         </div>
       </div>
+      {/* BOUTON AJOUTER AUX FAVORIS */}
+      <button
+        className="ajouter-favoris-btn"
+        onClick={() => ajouterFavoris(recette)}
+        disabled={dejaFavori}
+      >
+        {dejaFavori ? "Déjà dans les favoris" : "Ajouter aux favoris"}
+      </button>
       {/* INGREDIENTS */}
       <div className=" ingredients-detail-recette">
         <h2 className="primary-title">Ingredients</h2>

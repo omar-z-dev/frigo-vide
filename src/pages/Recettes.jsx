@@ -57,18 +57,6 @@ export default function Recettes() {
               <img src={recette.image} alt={recette.nom} />
 
               <h3 className="primary-title">{recette.nom}</h3>
-
-              <button
-                className="ajouter-favoris-btn"
-                onClick={(event) => {
-                  /*stop la propagation de l'evenement du  clic*/
-                  event.stopPropagation();
-                  ajouterFavoris(recette);
-                }}
-                disabled={dejaFavori}
-              >
-                {dejaFavori ? "Déjà dans les favoris" : "Ajouter aux favoris"}
-              </button>
             </div>
           );
         })}
